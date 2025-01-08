@@ -2,6 +2,6 @@
 
 # Stop the Apache service
 echo "Stopping Apache..."
-sudo systemctl stop apache2
+sudo systemctl stop httpd
 echo "Apache stopped."
 
