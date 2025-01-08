@@ -1,0 +1,27 @@
+version: '1.0'
+
+application:
+  name: MyApacheApp
+  scripts:
+    before_install: before_install.sh
+    after_install: after_install.sh
+    application_start: application_start.sh
+    application_stop: application_stop.sh
+    validate_service: validate_service.sh
+
+  deployment:
+    steps:
+      - step: Stop Application
+        script: application_stop.sh
+
+      - step: Prepare Environment
+        script: before_install.sh
+
+      - step: Deploy Application
+        # This is where you'd typically copy files or run deployment commands
+
+      - step: Start Application
+        script: application_start.sh
+
+      - step: Validate Service
+        script: validate_service.sh
