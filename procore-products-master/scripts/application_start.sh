@@ -2,5 +2,5 @@
 
 # Start the Apache service
 echo "Starting Apache..."
-sudo systemctl start apache2
+sudo systemctl start httpd
 echo "Apache started."
