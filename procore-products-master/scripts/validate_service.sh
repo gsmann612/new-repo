@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check the status of Apache
-if systemctl is-active --quiet apache2; then
+if systemctl is-active --quiet httpd; then
     echo "Apache is running."
     exit 0
 else
