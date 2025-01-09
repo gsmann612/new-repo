@@ -3,25 +3,25 @@ version: '1.0'
 application:
   name: MyApacheApp
   scripts:
-    before_install: before_install.sh
-    after_install: after_install.sh
-    application_start: application_start.sh
-    application_stop: application_stop.sh
-    validate_service: validate_service.sh
+    before_install: before_install.sh         # Prepare environment, install dependencies
+    after_install: after_install.sh            # Run post-deployment tasks
+    application_start: application_start.sh     # Start the application service
+    application_stop: application_stop.sh       # Stop the application service
+    validate_service: validate_service.sh       # Check if the application is running
 
   deployment:
     steps:
       - step: Stop Application
-        script: application_stop.sh
+        script: application_stop.sh              # Stop the application before deploying new version
 
       - step: Prepare Environment
-        script: before_install.sh
+        script: before_install.sh                 # Prepare environment for deployment
 
       - step: Deploy Application
-        # This is where you'd typically copy files or run deployment commands
+        # Insert commands to copy files or deploy the application here
 
       - step: Start Application
-        script: application_start.sh
+        script: application_start.sh              # Start the application after deployment
 
       - step: Validate Service
-        script: validate_service.sh
+        script: validate_service.sh               # Validate that the application is running
