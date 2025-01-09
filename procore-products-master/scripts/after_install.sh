@@ -6,3 +6,4 @@ sudo systemctl restart httpd
 
 # Finish
 echo "After install script completed successfully."
+
