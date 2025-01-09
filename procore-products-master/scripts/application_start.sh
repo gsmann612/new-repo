@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# Start the Apache service
-echo "Starting Apache..."
-sudo systemctl start httpd
-echo "Apache started."
+# Restart Apache to apply changes
+echo "Restarting Apache..."
+sudo systemctl restart httpd
+
+# Finish
+echo "After install script completed successfully."
+
